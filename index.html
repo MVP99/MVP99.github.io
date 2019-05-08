@@ -292,6 +292,478 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/08/aaaa/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="_doucc">
+      <meta itemprop="description" content="没人能在我的BGM里打败我">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="little bea">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/08/aaaa/" class="post-title-link" itemprop="url">aaaa</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-08 13:48:30" itemprop="dateCreated datePublished" datetime="2019-05-08T13:48:30+08:00">2019-05-08</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/07/React 生命周期渲染问题点 /">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="_doucc">
+      <meta itemprop="description" content="没人能在我的BGM里打败我">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="little bea">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/07/React 生命周期渲染问题点 /" class="post-title-link" itemprop="url">React 生命周期渲染问题点</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-07 23:51:04" itemprop="dateCreated datePublished" datetime="2019-05-07T23:51:04+08:00">2019-05-07</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-08 13:48:51" itemprop="dateModified" datetime="2019-05-08T13:48:51+08:00">2019-05-08</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>渲染分为两个阶段： reconciliation和commit。前者过程是可以打断的，后者是不能暂停，会一直更新界面直到完成。</p>
+<p>Reconciliation阶段包括</p>
+<pre><code>componentWillMount
+componentWillReceiveProps
+shouldComponentUpdate
+componentWillUpdate
+</code></pre><p>Commit 节点包括</p>
+<pre><code>componentDidMount
+componentDidUpdate
+componentWillUnmount
+</code></pre><p>因为Reconciliation节点是可以被打断的，所以Reconciliation节点会执行的生命周期函数就有可能会出现多次调用的情况，从而可能引发Bug，Reconciliation阶段会调用的几个函数除了shouldComponentUpdate以外的函数都应该避免使用。</p>
+<p>V16中引入了新的API来解决这个问题getDerivedStateFromProps用于替换componentWillReceiveProps,该函数会在初始化和update时被调用。getSnapshotBeforeUpdate用于替换componentWillUpdate该函数会在update后DOM更新前被调用，用于读取最新的DOM数据。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/07/JavaScript 克隆/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="_doucc">
+      <meta itemprop="description" content="没人能在我的BGM里打败我">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="little bea">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/07/JavaScript 克隆/" class="post-title-link" itemprop="url">JavaScript 克隆简介</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-07 22:23:41" itemprop="dateCreated datePublished" datetime="2019-05-07T22:23:41+08:00">2019-05-07</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-08 13:47:35" itemprop="dateModified" datetime="2019-05-08T13:47:35+08:00">2019-05-08</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="JavaScript-克隆"><a href="#JavaScript-克隆" class="headerlink" title="JavaScript 克隆"></a>JavaScript 克隆</h2><pre><code>日常开发当中经常会遇到由于js引用数据类型导致的开发烦恼，Now，我们就来谈一谈js当中的一些克隆方式方法；
+</code></pre><p>首先js克隆基本分为浅克隆、深克隆两种方式</p>
+<h3 id="克隆前传"><a href="#克隆前传" class="headerlink" title="克隆前传"></a>克隆前传</h3><p>我们知道在引用数据类型当中如：对象、数组这样的都是一个地方存储数据一个地方存储地址，一般就是说的栈来存地址数据则是存储在堆当中的。</p>
+<p>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let a = &#123;b:1&#125;</span><br><span class="line">//此处a 即是地址，真实数据则是&#123;b:1&#125;</span><br></pre></td></tr></table></figure></p>
+<p>好了，咱们go on。</p>
+<h3 id="浅克隆"><a href="#浅克隆" class="headerlink" title="浅克隆"></a>浅克隆</h3><p>浅克隆很明显就是很浅的克隆不会把深层次的数据克隆（说了像没说）；意思是对于复杂类型的数据来说，它只是克隆了对象地址，而真正的数据是没有克隆的；原始数据改了，它也会以一并被更改。</p>
+<p>我们来看个列子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let a = &#123;a:1&#125;;</span><br><span class="line">let b = a;</span><br><span class="line"></span><br><span class="line">b.a = 2;</span><br><span class="line">//a.a = ?</span><br><span class="line"></span><br><span class="line">//a.a = 2;</span><br></pre></td></tr></table></figure>
+<h3 id="常见的浅克隆-："><a href="#常见的浅克隆-：" class="headerlink" title="常见的浅克隆 ："></a>常见的浅克隆 ：</h3><p>1.Object.assign()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let a = &#123;a:1&#125;;</span><br><span class="line">let clone = Object.assign(&#123;&#125;,a);</span><br></pre></td></tr></table></figure></p>
+<p>2.对于数组.slice()</p>
+<p>如果数组每项数据全为基本类型，复制可理解为深克隆，如果存在引用数据类型，为浅克隆；</p>
+<p>3.对于 JSON.parse(JSON.stringify(data)); 方法能满足大部分需要，能解释为深克隆，但是他不能克隆函数，所以说也会存在问题。</p>
+<h3 id="深克隆"><a href="#深克隆" class="headerlink" title="深克隆"></a>深克隆</h3><pre><code>因为浅克隆的问题都是由于存在引用数据类型的复杂数据导致的，深克隆的基本原理则是，遍历递归原始数据，如果遇到是基本数据则直接赋值，如果是复杂类型数据，将其递归。
+</code></pre><p>大致代码实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">//获取当前数据类型</span><br><span class="line">function getObjectType(obj)&#123;</span><br><span class="line">    var objType = &apos;&apos;;</span><br><span class="line">    if(obj === null)&#123;</span><br><span class="line">        objType = &apos;null&apos;;</span><br><span class="line">    &#125;else if(obj === undefined)&#123;</span><br><span class="line">        objType = &apos;undefined&apos;;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        objType = Object.prototype.toString.call(obj).slice(8,-1).toLowerCase();</span><br><span class="line">    &#125;</span><br><span class="line">    return objType;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//执行主函数</span><br><span class="line">function deepClone(obj)&#123;</span><br><span class="line">    var res;</span><br><span class="line">    var objType = getObjectType(obj);</span><br><span class="line">    if(objType === &apos;object&apos;)&#123;</span><br><span class="line">        res = &#123;&#125;;</span><br><span class="line">        for(var key in obj)&#123;//</span><br><span class="line">            /*</span><br><span class="line">                因为for ... in 为遍历出原型链上的数据，如果不需要则需加上判断</span><br><span class="line">                obj.hasOwnProperty(key) === true</span><br><span class="line">            */</span><br><span class="line">            res[key] = deepClone(obj[key]);//arguments.callee代表函数名  这里也可以写成 res[key] = arguments.callee(obj[key]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;else if(objType === &apos;array&apos;)&#123;</span><br><span class="line">        res = [];</span><br><span class="line">        for(var i = 0 , len = obj.length; i &lt; len ; ++i)&#123;</span><br><span class="line">            res[i] = deepClone(obj[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        res = obj;</span><br><span class="line">    &#125;</span><br><span class="line">    return res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/07/前端面试总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -718,7 +1190,7 @@ setTimeout 的第一个参数使用字符串而非函数的话，会引发内存
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/07/JavaScript 克隆/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/06/JavaScript 继承/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="_doucc">
@@ -738,7 +1210,7 @@ setTimeout 的第一个参数使用字符串而非函数的话，会引发内存
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/03/07/JavaScript 克隆/" class="post-title-link" itemprop="url">JavaScript 克隆简介</a>
+                <a href="/2019/05/06/JavaScript 继承/" class="post-title-link" itemprop="url">JavaScript 继承</a>
               
             
           </h1>
@@ -763,7 +1235,7 @@ setTimeout 的第一个参数使用字符串而非函数的话，会引发内存
                 
               
 
-              <time title="创建时间：2019-03-07 22:23:41" itemprop="dateCreated datePublished" datetime="2019-03-07T22:23:41+08:00">2019-03-07</time>
+              <time title="创建时间：2019-05-06 23:51:04" itemprop="dateCreated datePublished" datetime="2019-05-06T23:51:04+08:00">2019-05-06</time>
             
 
             
@@ -780,175 +1252,7 @@ setTimeout 的第一个参数使用字符串而非函数的话，会引发内存
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-08 13:22:55" itemprop="dateModified" datetime="2019-05-08T13:22:55+08:00">2019-05-08</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="JavaScript-克隆"><a href="#JavaScript-克隆" class="headerlink" title="JavaScript 克隆"></a>JavaScript 克隆</h2><pre><code>日常开发当中经常会遇到由于js引用数据类型导致的开发烦恼，Now，我们就来谈一谈js当中的一些克隆方式方法；
-</code></pre><p>首先js克隆基本分为浅克隆、深克隆两种方式</p>
-<h3 id="克隆前传"><a href="#克隆前传" class="headerlink" title="克隆前传"></a>克隆前传</h3><p>我们知道在引用数据类型当中如：对象、数组这样的都是一个地方存储数据一个地方存储地址，一般就是说的栈来存地址数据则是存储在堆当中的。</p>
-<p>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let a = &#123;b:1&#125;</span><br><span class="line">//此处a 即是地址，真实数据则是&#123;b:1&#125;</span><br></pre></td></tr></table></figure></p>
-<p>好了，咱们go on。</p>
-<h3 id="浅克隆"><a href="#浅克隆" class="headerlink" title="浅克隆"></a>浅克隆</h3><p>浅克隆很明显就是很浅的克隆不会把深层次的数据克隆（说了像没说）；意思是对于复杂类型的数据来说，它只是克隆了对象地址，而真正的数据是没有克隆的；原始数据改了，它也会以一并被更改。</p>
-<p>我们来看个列子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let a = &#123;a:1&#125;;</span><br><span class="line">let b = a;</span><br><span class="line"></span><br><span class="line">b.a = 2;</span><br><span class="line">//a.a = ?</span><br><span class="line"></span><br><span class="line">//a.a = 2;</span><br></pre></td></tr></table></figure>
-<h3 id="常见的浅克隆-："><a href="#常见的浅克隆-：" class="headerlink" title="常见的浅克隆 ："></a>常见的浅克隆 ：</h3><p>1.Object.assign()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let a = &#123;a:1&#125;;</span><br><span class="line">let clone = Object.assign(&#123;&#125;,a);</span><br></pre></td></tr></table></figure></p>
-<p>2.对于数组.slice()</p>
-<p>如果数组每项数据全为基本类型，复制可理解为深克隆，如果存在引用数据类型，为浅克隆；</p>
-<p>3.对于 JSON.parse(JSON.stringify(data)); 方法能满足大部分需要，能解释为深克隆，但是他不能克隆函数，所以说也会存在问题。</p>
-<h3 id="深克隆"><a href="#深克隆" class="headerlink" title="深克隆"></a>深克隆</h3><pre><code>因为浅克隆的问题都是由于存在引用数据类型的复杂数据导致的，深克隆的基本原理则是，遍历递归原始数据，如果遇到是基本数据则直接赋值，如果是复杂类型数据，将其递归。
-</code></pre><p>大致代码实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">//获取当前数据类型</span><br><span class="line">function getObjectType(obj)&#123;</span><br><span class="line">    var objType = &apos;&apos;;</span><br><span class="line">    if(obj === null)&#123;</span><br><span class="line">        objType = &apos;null&apos;;</span><br><span class="line">    &#125;else if(obj === undefined)&#123;</span><br><span class="line">        objType = &apos;undefined&apos;;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        objType = Object.prototype.toString.call(obj).slice(8,-1).toLowerCase();</span><br><span class="line">    &#125;</span><br><span class="line">    return objType;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//执行主函数</span><br><span class="line">function deepClone(obj)&#123;</span><br><span class="line">    var res;</span><br><span class="line">    var objType = getObjectType(obj);</span><br><span class="line">    if(objType === &apos;object&apos;)&#123;</span><br><span class="line">        res = &#123;&#125;;</span><br><span class="line">        for(var key in obj)&#123;//</span><br><span class="line">            /*</span><br><span class="line">                因为for ... in 为遍历出原型链上的数据，如果不需要则需加上判断</span><br><span class="line">                obj.hasOwnProperty(key) === true</span><br><span class="line">            */</span><br><span class="line">            res[key] = deepClone(obj[key]);//arguments.callee代表函数名  这里也可以写成 res[key] = arguments.callee(obj[key]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;else if(objType === &apos;array&apos;)&#123;</span><br><span class="line">        res = [];</span><br><span class="line">        for(var i = 0 , len = obj.length; i &lt; len ; ++i)&#123;</span><br><span class="line">            res[i] = deepClone(obj[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        res = obj;</span><br><span class="line">    &#125;</span><br><span class="line">    return res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/06/JavaScript 继承/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="_doucc">
-      <meta itemprop="description" content="没人能在我的BGM里打败我">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="little bea">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/03/06/JavaScript 继承/" class="post-title-link" itemprop="url">JavaScript 继承</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-03-06 23:51:04" itemprop="dateCreated datePublished" datetime="2019-03-06T23:51:04+08:00">2019-03-06</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-08 13:22:55" itemprop="dateModified" datetime="2019-05-08T13:22:55+08:00">2019-05-08</time>
+                <time title="修改时间：2019-05-08 13:47:36" itemprop="dateModified" datetime="2019-05-08T13:47:36+08:00">2019-05-08</time>
               
             
           </span>
@@ -1051,7 +1355,7 @@ setTimeout 的第一个参数使用字符串而非函数的话，会引发内存
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/05/React 生命周期渲染问题点 /">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/07/js注意项/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="_doucc">
@@ -1071,7 +1375,7 @@ setTimeout 的第一个参数使用字符串而非函数的话，会引发内存
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/03/05/React 生命周期渲染问题点 /" class="post-title-link" itemprop="url">React 生命周期渲染问题点</a>
+                <a href="/2018/05/07/js注意项/" class="post-title-link" itemprop="url">js注意项</a>
               
             
           </h1>
@@ -1096,7 +1400,7 @@ setTimeout 的第一个参数使用字符串而非函数的话，会引发内存
                 
               
 
-              <time title="创建时间：2019-03-05 11:51:04" itemprop="dateCreated datePublished" datetime="2019-03-05T11:51:04+08:00">2019-03-05</time>
+              <time title="创建时间：2018-05-07 21:17:39" itemprop="dateCreated datePublished" datetime="2018-05-07T21:17:39+08:00">2018-05-07</time>
             
 
             
@@ -1113,173 +1417,7 @@ setTimeout 的第一个参数使用字符串而非函数的话，会引发内存
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-08 13:26:10" itemprop="dateModified" datetime="2019-05-08T13:26:10+08:00">2019-05-08</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>渲染分为两个阶段： reconciliation和commit。前者过程是可以打断的，后者是不能暂停，会一直更新界面直到完成。</p>
-<p>Reconciliation阶段包括</p>
-<pre><code>componentWillMount
-componentWillReceiveProps
-shouldComponentUpdate
-componentWillUpdate
-</code></pre><p>Commit 节点包括</p>
-<pre><code>componentDidMount
-componentDidUpdate
-componentWillUnmount
-</code></pre><p>因为Reconciliation节点是可以被打断的，所以Reconciliation节点会执行的生命周期函数就有可能会出现多次调用的情况，从而可能引发Bug，Reconciliation阶段会调用的几个函数除了shouldComponentUpdate以外的函数都应该避免使用。</p>
-<p>V16中引入了新的API来解决这个问题getDerivedStateFromProps用于替换componentWillReceiveProps,该函数会在初始化和update时被调用。getSnapshotBeforeUpdate用于替换componentWillUpdate该函数会在update后DOM更新前被调用，用于读取最新的DOM数据。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/07/js注意项/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="_doucc">
-      <meta itemprop="description" content="没人能在我的BGM里打败我">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="little bea">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/11/07/js注意项/" class="post-title-link" itemprop="url">js注意项</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-07 21:17:39" itemprop="dateCreated datePublished" datetime="2018-11-07T21:17:39+08:00">2018-11-07</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-08 13:09:23" itemprop="dateModified" datetime="2019-05-08T13:09:23+08:00">2019-05-08</time>
+                <time title="修改时间：2019-05-08 13:47:35" itemprop="dateModified" datetime="2019-05-08T13:47:35+08:00">2019-05-08</time>
               
             
           </span>
@@ -1428,7 +1566,7 @@ componentWillUnmount
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/06/Markdown基本语法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/06/Markdown基本语法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="_doucc">
@@ -1448,7 +1586,7 @@ componentWillUnmount
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/11/06/Markdown基本语法/" class="post-title-link" itemprop="url">model</a>
+                <a href="/2018/05/06/Markdown基本语法/" class="post-title-link" itemprop="url">model</a>
               
             
           </h1>
@@ -1473,7 +1611,7 @@ componentWillUnmount
                 
               
 
-              <time title="创建时间：2018-11-06 23:44:24" itemprop="dateCreated datePublished" datetime="2018-11-06T23:44:24+08:00">2018-11-06</time>
+              <time title="创建时间：2018-05-06 23:44:24" itemprop="dateCreated datePublished" datetime="2018-05-06T23:44:24+08:00">2018-05-06</time>
             
 
             
@@ -1490,7 +1628,7 @@ componentWillUnmount
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-08 13:35:13" itemprop="dateModified" datetime="2019-05-08T13:35:13+08:00">2019-05-08</time>
+                <time title="修改时间：2019-05-08 13:47:35" itemprop="dateModified" datetime="2019-05-08T13:47:35+08:00">2019-05-08</time>
               
             
           </span>
@@ -1666,7 +1804,7 @@ componentWillUnmount
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
