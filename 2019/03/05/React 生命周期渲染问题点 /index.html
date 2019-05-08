@@ -96,17 +96,18 @@
 
 
 
-  <meta name="description" content="没人能在我的BGM里打败我">
+  <meta name="description" content="渲染分为两个阶段： reconciliation和commit。前者过程是可以打断的，后者是不能暂停，会一直更新界面直到完成。 Reconciliation阶段包括 componentWillMount componentWillReceiveProps shouldComponentUpdate componentWillUpdate Commit 节点包括 componentDidMount">
 <meta name="keywords" content="前端">
-<meta property="og:type" content="website">
-<meta property="og:title" content="little bea">
-<meta property="og:url" content="http://yoursite.com/archives/2018/11/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React 生命周期渲染问题点 .md">
+<meta property="og:url" content="http://yoursite.com/2019/03/05/React 生命周期渲染问题点 /index.html">
 <meta property="og:site_name" content="little bea">
-<meta property="og:description" content="没人能在我的BGM里打败我">
+<meta property="og:description" content="渲染分为两个阶段： reconciliation和commit。前者过程是可以打断的，后者是不能暂停，会一直更新界面直到完成。 Reconciliation阶段包括 componentWillMount componentWillReceiveProps shouldComponentUpdate componentWillUpdate Commit 节点包括 componentDidMount">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-05-08T05:17:29.218Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="little bea">
-<meta name="twitter:description" content="没人能在我的BGM里打败我">
+<meta name="twitter:title" content="React 生命周期渲染问题点 .md">
+<meta name="twitter:description" content="渲染分为两个阶段： reconciliation和commit。前者过程是可以打断的，后者是不能暂停，会一直更新界面直到完成。 Reconciliation阶段包括 componentWillMount componentWillReceiveProps shouldComponentUpdate componentWillUpdate Commit 节点包括 componentDidMount">
 
 
 
@@ -116,7 +117,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/archives/2018/11/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/05/React 生命周期渲染问题点 /">
 
 
 
@@ -126,7 +127,7 @@
   };
 </script>
 
-  <title>归档 | little bea</title>
+  <title>React 生命周期渲染问题点 .md | little bea</title>
   
 
 
@@ -174,7 +175,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -229,7 +230,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -250,19 +251,6 @@
 
   
     
-
-    
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
 
   
 
@@ -288,78 +276,195 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 6 篇日志。 继续努力。
-      </span>
-      
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
-
-        
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/05/React 生命周期渲染问题点 /">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="_doucc">
+      <meta itemprop="description" content="没人能在我的BGM里打败我">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="little bea">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/2018/11/07/js注意项/" itemprop="url">
-            
-              <span itemprop="name">js注意项</span>
-            
-          </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">React 生命周期渲染问题点 .md
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-07T21:17:39+08:00" content="2018-11-07">
-          11-07
-        </time>
-      </div>
+              
+            
+          </h1>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-05 11:51:04" itemprop="dateCreated datePublished" datetime="2019-03-05T11:51:04+08:00">2019-03-05</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-08 13:17:29" itemprop="dateModified" datetime="2019-05-08T13:17:29+08:00">2019-05-08</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <p>渲染分为两个阶段： reconciliation和commit。前者过程是可以打断的，后者是不能暂停，会一直更新界面直到完成。</p>
+<p>Reconciliation阶段包括</p>
+<pre><code>componentWillMount
+componentWillReceiveProps
+shouldComponentUpdate
+componentWillUpdate
+</code></pre><p>Commit 节点包括</p>
+<pre><code>componentDidMount
+componentDidUpdate
+componentWillUnmount
+</code></pre><p>因为Reconciliation节点是可以被打断的，所以Reconciliation节点会执行的生命周期函数就有可能会出现多次调用的情况，从而可能引发Bug，Reconciliation阶段会调用的几个函数除了shouldComponentUpdate以外的函数都应该避免使用。</p>
+<p>V16中引入了新的API来解决这个问题getDerivedStateFromProps用于替换componentWillReceiveProps,该函数会在初始化和update时被调用。getSnapshotBeforeUpdate用于替换componentWillUpdate该函数会在update后DOM更新前被调用，用于读取最新的DOM数据。</p>
+
+      
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/07/js注意项/" rel="next" title="js注意项">
+                <i class="fa fa-chevron-left"></i> js注意项
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/06/JavaScript 继承/" rel="prev" title="JavaScript 继承">
+                JavaScript 继承 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -561,6 +666,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
 
   
 
@@ -576,6 +685,8 @@
 
   
 
+
+  
 
 
   
